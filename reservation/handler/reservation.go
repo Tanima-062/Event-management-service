@@ -27,7 +27,7 @@ func (r *ReservationHandler) Create(c *gin.Context){
 
 	request := &reservation.SaveInput{}
 
-	if err := c.Bind(request); err != nil {
+	if err := c.ShouldBindJSON(request); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return 
 	}
