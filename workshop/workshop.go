@@ -10,7 +10,7 @@ import (
 type WorkshopTable struct {
 	ID     		int64     		`gorm:"primaryKey;autoIncrement:true" json:"id,omitempty"`
 	EventID     int64           `json:"event_id"`
-	Title  		string    		`json:"title" validate:"required"`
+	Title  		string    		`json:"title"`
 	Description string    		`json:"description"`
 	StartAt     time.Time 		`gorm:"type:time" json:"start_at"`
 	EndAt       time.Time 		`gorm:"type:time" json:"end_at"`
@@ -18,7 +18,7 @@ type WorkshopTable struct {
 
 type WorkshopOutput struct {
 	ID     				int64     		`gorm:"primaryKey;autoIncrement:true" json:"id,omitempty"`
-	Title  				string    		`json:"title" validate:"required"`
+	Title  				string    		`json:"title"`
 	Description 		string    		`json:"description"`
 	StartAt     		time.Time 		`gorm:"type:time" json:"start_at"`
 	EndAt       		time.Time 		`gorm:"type:time" json:"end_at"`
@@ -27,7 +27,7 @@ type WorkshopOutput struct {
 // DetailOutput
 type DetailOutput struct {
 	ID     				int64     		`gorm:"primaryKey;autoIncrement:true" json:"id,omitempty"`
-	Title  				string    		`json:"title" validate:"required"`
+	Title  				string    		`json:"title"`
 	Description 		string    		`json:"description"`
 	StartAt     		time.Time 		`gorm:"type:time" json:"start_at"`
 	EndAt       		time.Time 		`gorm:"type:time" json:"end_at"`

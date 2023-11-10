@@ -34,12 +34,12 @@ func (r *ReservationRepository) TxRollback(tx *gorm.DB) {
 }
 
 // CreateReservation
-func (r *ReservationRepository) Create(reservationTable *reservation.ReservationTable) error {
-	return r.db.Create(&reservationTable ).Error
+func (r *ReservationRepository) Create(reservationTable *reservation.Reservations) error {
+	return r.db.Create(&reservationTable).Error
 }
 
 func (r *ReservationRepository) GetLastReservation() (reservation.ReservationOutput, error) {
 	result := reservation.ReservationOutput{}
-	err := r.db.Last(&result).Error
+	err := r.db.Table("reservations").Last(&result).Error
 	return result, err
 }

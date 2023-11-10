@@ -25,7 +25,7 @@ func Route(eventDB *gorm.DB) *gin.Engine{
 	workshopRouter.GET("/detail/:id", func(ctx *gin.Context){ workshopHandler.Detail(ctx)})
 
 	reservationRouter := baseRouter.Group("/reservation")
-	reservationRouter.POST("/create/:workshoID", func(ctx *gin.Context){ reservationHandler.Create(ctx)})
-	
+	reservationRouter.POST("/create/:workshopID", func(ctx *gin.Context){ reservationHandler.Create(ctx)})
+
 	return router
 }

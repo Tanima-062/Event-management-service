@@ -31,10 +31,10 @@ func NewReservationUsecase(db *gorm.DB) reservation.IReservationUsecase {
 func (r *ReservationUsecase) Create(request *reservation.SaveInput, workshopID int64) (*reservation.SaveOutput, error) {
 	response := &reservation.SaveOutput{}
 
-	reservationTable := &reservation.ReservationTable{}
-	reservationTable.Name = request.Name
-	reservationTable.Email = request.Email
-	reservationTable.WorkshopID = workshopID
+	reservationTable := &reservation.Reservations{}
+	reservationTable.ReservationTable.Name = request.Name
+	reservationTable.ReservationTable.Email = request.Email
+	reservationTable.ReservationTable.WorkshopID = workshopID
 
 	if err := r.ReservationRepository.Create(reservationTable); err != nil {
 		return response, err

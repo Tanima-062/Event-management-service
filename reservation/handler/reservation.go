@@ -21,18 +21,20 @@ func NewReservationHandler(db *gorm.DB) *ReservationHandler {
 	}
 }
 
-func (r *ReservationHandler) Create(c *gin.Context) error {
+func (r *ReservationHandler) Create(c *gin.Context){
 	id, _ := c.Params.Get("workshopID")
 	workshopID, _ := strconv.Atoi(id)
 
 	request := &reservation.SaveInput{}
+
 	if err := c.Bind(request); err != nil {
-		c.JSON(http.StatusBadRequest, map[string]string{"message": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return 
 	}
 
 	response, _ := r.ReservationUsecase.Create(request, int64(workshopID))
 
 	c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, response)
-	return nil
+	return
 }

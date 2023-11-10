@@ -12,7 +12,7 @@ type Events struct {
 
 type EventTable struct {
 	ID     		int64     		`gorm:"primaryKey;autoIncrement:true" json:"id,omitempty"`
-	Title  		string    		`json:"title" validate:"required"`
+	Title  		string    		`json:"title"`
 	StartAt     time.Time 		`gorm:"type:time" json:"start_at"`
 	EndAt       time.Time 		`gorm:"type:time" json:"end_at"`
 }

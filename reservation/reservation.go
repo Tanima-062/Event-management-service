@@ -7,22 +7,27 @@ import (
 )
 
 // Reservation Table
+type Reservations struct {
+	ReservationTable `gorm:"embedded"`
+}
+
+// Reservation Table
 type ReservationTable struct {
 	ID     			int64     		`gorm:"primaryKey;autoIncrement:true" json:"id,omitempty"`
-	Name  		 	string    		`json:"name" validate:"required"`
-	Email  		 	string    		`json:"email" validate:"required"`
+	Name  		 	string    		`json:"name"`
+	Email  		 	string    		`json:"email"`
 	WorkshopID      int64           
 }
 
 type ReservationOutput struct {
-	ID     			int64     		`gorm:"primaryKey;autoIncrement:true" json:"id,omitempty"`
-	Name  		 	string    		`json:"name" validate:"required"`
-	Email  		 	string    		`json:"email" validate:"required"`
+	ID     			int64     		`json:"id"`
+	Name  		 	string    		`json:"name"`
+	Email  		 	string    		`json:"email"`
 }
 
 type SaveInput struct{
-	Name  		 	string    		`json:"name" validate:"required"`
-	Email  		 	string    		`json:"email" validate:"required"`
+	Name  		 	string    		`json:"name"  binding:"required"`
+	Email  		 	string    		`json:"email" binding:"required"`
 }
 
 type SaveOutput struct{
@@ -37,6 +42,6 @@ type IReservationUsecase interface {
 // IReservationRepository
 type IReservationRepository interface {
 	common.Repository
-	Create(reservationTable *ReservationTable) error
+	Create(reservationTable *Reservations) error
 	GetLastReservation() (ReservationOutput, error)
 }
