@@ -7,7 +7,6 @@ import (
 	reservationInfra "event-management-service/reservation/infra"
 	"event-management-service/workshop"
 	workshopInfra "event-management-service/workshop/infra"
-	"log"
 
 	"gorm.io/gorm"
 )
@@ -22,9 +21,9 @@ type ReservationUsecase struct {
 // NewReservationUsecase instantiation
 func NewReservationUsecase(db *gorm.DB) reservation.IReservationUsecase {
 	return &ReservationUsecase{
-		ReservationRepository:  reservationInfra.NewReservationRepository(db),
-		EventRepository:        eventInfra.NewEventRepository(db),
-		WorkshopRepository:     workshopInfra.NewWorkshopRepository(db),
+		ReservationRepository: reservationInfra.NewReservationRepository(db),
+		EventRepository:       eventInfra.NewEventRepository(db),
+		WorkshopRepository:    workshopInfra.NewWorkshopRepository(db),
 	}
 }
 
@@ -41,15 +40,15 @@ func (r *ReservationUsecase) Create(request *reservation.SaveInput, workshopID i
 		return response, err
 	}
 
-	reservationOutput, err := r.ReservationRepository.GetLastReservation(); 
-	if err != nil{
+	reservationOutput, err := r.ReservationRepository.GetLastReservation()
+	if err != nil {
 		return response, err
 	}
 
 	response.Reservation = reservationOutput
 
-	workshopDetail, _ := r.WorkshopRepository.FetchWorkshopDetail(workshopID); 
-	
+	workshopDetail, _ := r.WorkshopRepository.FetchWorkshopDetail(workshopID)
+
 	workshopResult := &workshop.WorkshopOutput{}
 	workshopResult.ID = workshopDetail.ID
 	workshopResult.Title = workshopDetail.Title
