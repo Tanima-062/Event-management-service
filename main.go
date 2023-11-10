@@ -1,29 +1,27 @@
 package main
 
 import (
-	"net/http"
-	"os"
-	"time"
-	_ "time/tzdata"
+	"event-management-service/config"
+	"event-management-service/router"
+	"log"
 
-	"github.com/Tanima-062/event_management_service/common/app"
-	"github.com/Tanima-062/event_management_service/common/infra"
-	"github.com/joho/godotenv"
+	"net/http"
 )
 
+func main() {
 
+	eventDB, err := infra.DBCon()
+	if err != nil {
+		log.Fatal(err)
+	}
 
+	routes := router.Route(eventDB)
 
+	server := &http.Server{
+		Addr:    ":8888",
+		Handler: routes,
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
+	errS := server.ListenAndServe()
+	log.Fatal(errS)
+}

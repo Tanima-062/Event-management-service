@@ -3,7 +3,6 @@ package infra
 import (
 	"fmt"
 	"net/url"
-	"os"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -11,11 +10,11 @@ import (
 // DBConnection
 func DBCon() (*gorm.DB, error) {
 
-	username := os.Getenv("DB_USERNAME")
-	password := os.Getenv("DB_PASSWORD")
-	database := os.Getenv("DB_NAME")
-	host := os.Getenv("DB_HOST")
-	port := os.Getenv("DB_PORT")
+	username := "root"
+	password := ""
+	database := "event_management_system"
+	host := "127.0.0.1"
+	port := "3306"
 	protocol := fmt.Sprintf("tcp(%s:%s)", host, port)
 
 	connectInfo := fmt.Sprintf("%s:%s@%s/%s?parseTime=True&loc=%s", username, password, protocol, database, url.PathEscape("Asia/Dhaka"))
