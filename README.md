@@ -1,11 +1,12 @@
 ## Clone from git repository
 
-1. git clone https://github.com/Tanima-062/event-management-service.git
+1. git clone https://github.com/Tanima-062/event-management-service.git [command]
 
 ## Dockerize event-management-service app
 
 ## Configure Dockerfile
 
+======================================== To Run Docker =============================================
 ## To build docker and create image
 
 1. docker build -t eventdocker .
@@ -17,6 +18,20 @@
 ## To run docker 
 
 3. docker run --network="host" -p 8888:8888 -t eventdocker
+
+========================================== TO RUN Local =============================================
+
+## Clone from git repository
+
+1. git clone https://github.com/Tanima-062/event-management-service.git [command]
+
+## Instruction
+2. Install Go in PC [If not exist]
+3. Go to project direction
+
+## Run this command to start server
+
+4. go run main.go
 
 ## All API ENDPOINTS
 
