@@ -107,7 +107,7 @@
         "description": "Demo Workshop Description",
         "start_at": "2023-11-24T09:42:12+06:00",
         "end_at": "2023-12-28T09:42:12+06:00",
-        "total_reservations": 5
+        "total_reservations": 3
     }
 
 5. Create Reservation => http://127.0.0.1:8888/api/reservation/create/1 ["/api/reservation/create/:workshopID"] [POST Request]
