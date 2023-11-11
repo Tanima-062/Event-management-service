@@ -1,3 +1,4 @@
+## SQL file attached in project directory [ database name => event_management_system]
 ## Clone from git repository
 
 1. git clone https://github.com/Tanima-062/event-management-service.git [command]
