@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "804e2184-4a0e-46b5-817f-997412bde6f9",
+		"name": "event-management-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24310540"
+	},
+	"item": [
+		{
+			"name": "Workshop Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.01:8888/api/workshops/detail/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"01"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"workshops",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Workshop Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.01:8888/api/workshops/detail/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"workshops",
+								"detail",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 03:16:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Demo Workshop\",\n    \"description\": \"Demo Workshop Description\",\n    \"start_at\": \"2023-11-24T09:42:12+06:00\",\n    \"end_at\": \"2023-12-28T09:42:12+06:00\",\n    \"total_reservations\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "Workshop List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.01:8888/api/workshops/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"01"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"workshops",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Workshop List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.01:8888/api/workshops/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"01"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"workshops",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 03:15:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "452"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Demo Event\",\n    \"start_at\": \"2023-11-24T08:48:07+06:00\",\n    \"end_at\": \"2023-12-15T08:48:07+06:00\",\n    \"workshops\": [\n        {\n            \"id\": 1,\n            \"event_id\": 1,\n            \"title\": \"Demo Workshop\",\n            \"description\": \"Demo Workshop Description\",\n            \"start_at\": \"2023-11-24T09:42:12+06:00\",\n            \"end_at\": \"2023-12-28T09:42:12+06:00\"\n        },\n        {\n            \"id\": 2,\n            \"event_id\": 1,\n            \"title\": \"Demo Workshop 1\",\n            \"description\": \"Demo Workshop 1 description \",\n            \"start_at\": \"2023-12-14T09:42:12+06:00\",\n            \"end_at\": \"2023-12-29T09:42:12+06:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Event List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8888/api/events?page=1&limit=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"events"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Event List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8888/api/events?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"events"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 03:13:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "297"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"events\": [\n        {\n            \"id\": 1,\n            \"title\": \"Demo Event\",\n            \"start_at\": \"2023-11-24T08:48:07+06:00\",\n            \"end_at\": \"2023-12-15T08:48:07+06:00\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Demo Event 1\",\n            \"start_at\": \"2023-12-28T08:48:07+06:00\",\n            \"end_at\": \"2023-12-29T08:48:07+06:00\"\n        }\n    ],\n    \"pagination\": {\n        \"total\": 6,\n        \"per_page\": 2,\n        \"total_pages\": 3,\n        \"current_page\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Event Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8888/api/events/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Event Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8888/api/events/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"events",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 03:15:03 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Demo Event\",\n    \"start_at\": \"2023-11-24T08:48:07+06:00\",\n    \"end_at\": \"2023-12-15T08:48:07+06:00\",\n    \"total_workshops\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Reservation Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"10Minute Admin\",\n\t\"email\": \"admin@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/api/reservation/create/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"reservation",
+						"create",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reservation Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Famin Ishana\",\n\t\"email\": \"famina@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8888/api/reservation/create/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"reservation",
+								"create",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 03:17:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "350"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reservation\": {\n        \"id\": 17,\n        \"name\": \"Famin Ishana\",\n        \"email\": \"famina@gmail.com\"\n    },\n    \"event\": {\n        \"id\": 1,\n        \"title\": \"Demo Event\",\n        \"start_at\": \"2023-11-24T08:48:07+06:00\",\n        \"end_at\": \"2023-12-15T08:48:07+06:00\"\n    },\n    \"workshop\": {\n        \"id\": 1,\n        \"title\": \"Demo Workshop\",\n        \"description\": \"Demo Workshop Description\",\n        \"start_at\": \"2023-11-24T09:42:12+06:00\",\n        \"end_at\": \"2023-12-28T09:42:12+06:00\"\n    }\n}"
+				},
+				{
+					"name": "Reservation Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"\",\n\t\"email\": \"\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8888/api/reservation/create/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"reservation",
+								"create",
+								"1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Nov 2023 03:18:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "184"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Key: 'SaveInput.Name' Error:Field validation for 'Name' failed on the 'required' tag\\nKey: 'SaveInput.Email' Error:Field validation for 'Email' failed on the 'required' tag\"\n}"
+				}
+			]
+		}
+	]
+}
